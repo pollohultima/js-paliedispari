@@ -4,19 +4,34 @@ L’utente sceglie pari o dispari e inserisce un numero da 1 a 5. Generiamo un n
 */
 
 //Chiedo all'utente di selezionare pari o dispari
-let choice = prompt('Scegli pari o dispari');
+const choice = prompt('Scegli pari o dispari');
+console.log(choice);
 
 //Chiedo all'utente di inserire un numero da 1 a 5
-let userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
+const userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
 console.log(userNumber);
 
 //Genero numero random fra 1 e 5 per il pc
 function pcNumber() {
-    return randomNum = Math.floor(Math.random() * 5) + 1;
+    return randomPC = Math.ceil(Math.random() * 5);
 }
 console.log(pcNumber());
 
-function sommaNum() {
-    return somma = pcNumber() + userNumber;
+const somma = randomPC + userNumber;
+console.log(somma);
+
+function result(risultato) {
+    if (risultato % 2 == 0) {
+        return 'pari'
+    } else {
+        return 'dispari'
+    }
 }
-console.log(sommaNum());
+
+if (choice == result(somma)) {
+    document.querySelector('.winner').innerHTML = 'Hai vinto complimenti!'
+
+} else {
+    document.querySelector('.winner').innerHTML = 'Hai perso :('
+
+}
